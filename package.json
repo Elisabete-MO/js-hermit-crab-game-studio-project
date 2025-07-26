@@ -1,0 +1,30 @@
+{
+  "name": "js-hermit-crab-game-studio-project",
+  "version": "1.0.0",
+  "description": "A lightweight multiplayer match manager API built with Node.js – created for a backend game studio challenge.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elisabete-MO/js-hermit-crab-game-studio-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elisabete-MO/js-hermit-crab-game-studio-project/issues"
+  },
+  "homepage": "https://github.com/Elisabete-MO/js-hermit-crab-game-studio-project#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "supertest": "^7.1.4"
+  }
+}
