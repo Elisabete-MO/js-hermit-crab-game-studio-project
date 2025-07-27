@@ -5,8 +5,14 @@ const swaggerJsdoc = require('swagger-jsdoc');
 
 const app = express();
 
+const playerRoutes = require('./routes/playerRoutes');
+const matchRoutes = require('./routes/matchRoutes');
+
 // Middleware para JSON
 app.use(express.json());
+
+app.use('/players', playerRoutes);
+app.use('/matches', matchRoutes);
 
 // Swagger config
 const swaggerOptions = {
