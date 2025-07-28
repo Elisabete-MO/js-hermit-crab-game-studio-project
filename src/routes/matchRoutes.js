@@ -4,8 +4,7 @@ const matchController = require('../controllers/matchController');
 
 router.post('/', matchController.createMatch);
 router.post('/matches/:matchId/join/:playerId', matchController.joinMatch);
-router.post('/matches/:matchId/leave/:playerId', matchController.leaveMatch);
-router.patch('/:id/state', matchController.updateState);
+router.patch('/:id/state', matchController.leaveMatch);
 router.get('/', matchController.getAllMatches);
 router.get('/:id', matchController.getMatchById);
 
