@@ -5,8 +5,8 @@ const matchController = require('../controllers/matchController');
 router.post('/', matchController.createMatch);
 router.post('/matches/:matchId/join/:playerId', matchController.joinMatch);
 router.post('/matches/:matchId/leave/:playerId', matchController.leaveMatch);
+router.patch('/:id/state', matchController.updateState);
 router.get('/', matchController.getAllMatches);
 router.get('/:id', matchController.getMatchById);
-router.delete('/:id', matchController.deleteMatch);
 
 module.exports = router;
