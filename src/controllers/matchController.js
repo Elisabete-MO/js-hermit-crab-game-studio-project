@@ -13,7 +13,6 @@ const matchController = {
 
   async joinMatch(req, res) {
     const { matchId, playerId } = req.params;
-
     try {
       const match = await matchService.joinMatch(matchId, playerId);
       res.json(match);
@@ -24,7 +23,6 @@ const matchController = {
 
   async leaveMatch(req, res) {
     const { matchId } = req.params;
-
     try {
       const match = await matchService.updateState(matchId, MATCH_STATES.CANCELED);
       res.json(match);
@@ -44,12 +42,9 @@ const matchController = {
 
   async getMatchById(req, res) {
     const { id } = req.params;
-
     try {
       const match = await matchService.getMatchById(id);
-      if (!match) {
-        return res.status(404).json({ error: 'Match not found.' });
-      }
+      if (!match) return res.status(404).json({ error: 'Match not found.' });
       res.json(match);
     } catch (error) {
       res.status(500).json({ error: error.message });

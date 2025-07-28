@@ -1,6 +1,6 @@
 const playerService = require('../services/playerService');
 
-class PlayerController {
+const playerController = {
   createPlayer(req, res) {
     try {
       const player = playerService.createPlayer(req.body);
@@ -8,12 +8,12 @@ class PlayerController {
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
-  }
+  },
 
   getAllPlayers(req, res) {
     const players = playerService.getAllPlayers();
     res.json(players);
-  }
+  },
 
   getPlayerById(req, res) {
     try {
@@ -23,7 +23,7 @@ class PlayerController {
     } catch (error) {
       res.status(400).json({ error: error.message });
     }
-  }
+  },
 
   putPlayer(req, res) {
     try {
@@ -32,7 +32,7 @@ class PlayerController {
     } catch (error) {
       res.status(404).json({ error: error.message });
     }
-  }
+  },
 
   deletePlayer(req, res) {
     try {
@@ -42,6 +42,6 @@ class PlayerController {
       res.status(404).json({ error: error.message });
     }
   }
-}
+};
 
-module.exports = new PlayerController();
+module.exports = playerController;
