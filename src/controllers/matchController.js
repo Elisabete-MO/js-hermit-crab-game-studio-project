@@ -1,3 +1,4 @@
+const MATCH_STATES = require('../constants/matchStates');
 const matchService = require('../services/matchService');
 
 const matchController = {
@@ -22,26 +23,10 @@ const matchController = {
   },
 
   async leaveMatch(req, res) {
-    const { matchId, playerId } = req.params;
+    const { matchId } = req.params;
 
     try {
-      const match = await matchService.leaveMatch(matchId, playerId);
-      res.json(match);
-    } catch (error) {
-      res.status(400).json({ error: error.message });
-    }
-  },
-
-  async updateState(req, res) {
-    const { id } = req.params;
-    const { state } = req.body;
-
-    if (!state) {
-      return res.status(400).json({ error: 'State is required.' });
-    }
-
-    try {
-      const match = await matchService.updateState(id, state);
+      const match = await matchService.updateState(matchId, MATCH_STATES.CANCELED);
       res.json(match);
     } catch (error) {
       res.status(400).json({ error: error.message });
