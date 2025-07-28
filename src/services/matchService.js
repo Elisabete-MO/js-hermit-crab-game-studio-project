@@ -1,4 +1,4 @@
-const matches = require('../matchStorage');
+const matches = require('../database/matchStorage');
 const Match = require('../models/Match');
 const MATCH_STATES = require('../constants/matchStates');
 const { v4: uuidv4 } = require('uuid');
